@@ -1,0 +1,66 @@
+---
+title: Home
+---
+
+<div class="row">
+    <div class="span12">
+        <p><strong>Mike Clarke</strong> is a software engineer at <a href="http://disqus.com">Disqus</a>.</p>
+
+        <p>Mike has worked on scaling infrastructure to meet growing traffic demands,
+        with projects including Postgres database work, configuration management,
+        testing and deployment automation, capacity planning, and coding new
+        features.</p>
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="span12">
+        <h4>Recent thoughts</h4>
+        <ul class="listing">
+        <% sorted_articles.each do |post| %>
+            <li><%= post[:created_at].strftime("%-d %B %Y") %> - <%= link_to post[:title], post.path %></a></li>
+        <% end %>
+        </ul>
+    </div>
+</div>
+
+<hr />
+
+<div class="row">
+    <div class="span12">
+        <h4>Projects</h4>
+        <p><strong>Personal</p></strong>
+        <ul class="listing">
+            <li>
+                <a class='project' href="https://github.com/disqus/python-phabricator">python-phabricator</a>
+                Python API bindings for <a href="http://phabricator.org">Phabricator</a>
+            </li>
+            <li>
+                <a class='project' href="#">netcat.io</a>
+                <em>(offline)</em> Realtime availability and performance monitoring
+            </li>
+        </ul>
+
+        <p><strong>Disqus</p></strong>
+        <ul class="listing">
+            <li>
+                <a class='project' href="#">dns</a>
+                Migrated BIND to <a href="http://www.nlnetlabs.nl/projects/nsd/">nsd authoritative servers</a> and
+                <a href="http://unbound.net/">unbound recursive and caching servers</a>
+            </li>
+            <li>
+                <a class='project' href="#">fabric</a>
+                Replaced legacy .deb-based deployment with <a href="http://fabfile.org/">fabric</a>
+            </li>
+            <li>
+                <a class='project' href="#">postgres</a>
+                Administrated dozens of large, high-transaction postgres nodes
+            </li>
+            <li>
+                <a class='project' href="#">puppet</a>
+                Brought <a href="http://puppetlabs.com/">puppet-based configuration management</a> to Disqus
+            </li>
+    </div>
+</div>

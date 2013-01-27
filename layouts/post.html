@@ -1,0 +1,13 @@
+<% render 'default' do %>
+<section id="content" class="body">
+    <header>
+      <h2 class="entry-title"><%= link_to item[:title], item.path %></h2>
+    </header>
+    <aside class="published" title="<%= item[:created_at] %>">
+      <%= item[:created_at].strftime("%-d %B %Y") %>
+    </aside>
+    <article class="entry-content">
+        <%= yield %>
+    </article>
+</section>
+<% end %>

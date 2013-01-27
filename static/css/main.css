@@ -1,0 +1,62 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body {
+  background: url(/img/linen.png) repeat 0 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', Georgia, Times, serif;
+}
+
+p, div {
+  font-family: 'Open sans', Helvetica, Arial, sans-serif;
+}
+
+hr {
+  background-image: -webkit-linear-gradient(left, transparent, rgba(0, 0, 0, 0.75), transparent);
+  height: 1px;
+}
+
+.copyright {
+  margin-top: 30px;
+}
+
+.masthead div {
+  width: 40%;
+}
+
+.listing {
+  list-style-type: none;
+}
+
+.title {
+  margin-left: 48px;
+}
+
+.self {
+  height: 36px;
+  width: 36px;
+  margin-right: 12px; 
+}
+
+a.project {
+  float: left;
+  width: 25%;
+}
+
+/* Utilities */
+.absolute-center {
+  margin:auto;
+  position:absolute;
+  top:0;bottom:0;
+}
+
+.heading {
+  position:relative;
+}
