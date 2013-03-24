@@ -11,7 +11,7 @@ topics. It was my first foray into presenting at a technical conference - the
 opportunity was perfect, given the size of the audience and typical background
 of the attendees. With Pycon moving to Montreal next year, I hope Josh and the
 team at [PG Experts](http://www.pgexperts.com/) continue building on the early
-success of PyPgDay next year.
+success of PyPgDay.
 
 [The slides are available on Speaker Deck.](https://speakerdeck.com/mikeclarke)
 
