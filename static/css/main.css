@@ -6,12 +6,14 @@
 
 body {
   background: url(/img/white_wall_hash.png) repeat 0 0;
+  color: #222;
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Merriweather', Georgia, Times, serif;
+  text-shadow: 0 0 1px transparent;
 }
 
 p, div {
@@ -48,6 +50,12 @@ hr {
 a.project {
   float: left;
   width: 25%;
+}
+
+.entry-content p {
+  line-height: 24px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 /* Utilities */
