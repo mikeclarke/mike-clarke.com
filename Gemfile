@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'nanoc'
+gem 'adsf'
+gem 'listen'
 gem 'kramdown'
+gem 'nanoc'
