@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'adsf'
-gem 'listen'
+gem 'guard-nanoc'
 gem 'kramdown'
+gem 'listen'
 gem 'nanoc'
 gem 'systemu'
