@@ -4,7 +4,11 @@ title: Home
 
 <div class="row">
     <div class="span12">
-        <p><strong>Mike Clarke</strong> is a software engineer at <a href="http://disqus.com">Disqus</a>.</p>
+      <p><strong>Mike Clarke</strong> is a software engineer at <a href="http://standardtreasury.com">
+        Standard Treasury</a>. Previously, Mike built infrastructure at
+        <a href="http://disqus.com">Disqus</a>.</p>
+
+        <p>Mike has worked on scaling infrastructure to meet growing traffic demands,
 
         <p>Mike has worked on scaling infrastructure to meet growing traffic demands,
         with projects including Postgres database work, configuration management,
@@ -20,7 +24,7 @@ title: Home
         <h4>Recent thoughts</h4>
         <ul class="listing">
         <% sorted_articles.each do |post| %>
-            <li><%= post[:created_at].strftime("%-d %B %Y") %> - <%= link_to post[:title], post.path %></a></li>
+            <li><%= post[:created_at].strftime("%-d %B %Y") %> - <%= link_to post[:title], post.path %></li>
         <% end %>
         </ul>
     </div>
@@ -31,7 +35,7 @@ title: Home
 <div class="row">
     <div class="span12">
         <h4>Projects</h4>
-        <p><strong>Personal</p></strong>
+        <p><strong>Personal</strong></p>
         <ul class="listing">
             <li>
                 <a class='project' href="https://github.com/disqus/python-phabricator">python-phabricator</a>
@@ -43,7 +47,7 @@ title: Home
             </li>
         </ul>
 
-        <p><strong>Disqus</p></strong>
+        <p><strong>Disqus</strong></p>
         <ul class="listing">
             <li>
                 <a class='project' href="https://github.com/disqus/sharding-example">sharding-example</a>
@@ -66,5 +70,6 @@ title: Home
                 <a class='project' href="#">puppet</a>
                 Brought <a href="http://puppetlabs.com/">puppet-based configuration management</a> to Disqus
             </li>
+        </ul>
     </div>
 </div>
