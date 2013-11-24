@@ -8,14 +8,15 @@ kind: article
 
 * Docker and Jenkins (or any similar tool) are a perfect match for building continuous integration
 * The `Dockerfile` empowers developers to manage their own OS package requirements
-* Containers as build artifcats significantly simplifies integration scenarios
-* 12-factor app best practices fall out naturally from this strategy for continuous integration
+* Containers as build artifacts significantly simplifies integration scenarios
+* [12-factor app](http://12factor.net) best practices fall out naturally from this strategy for
+  continuous integration
 
 *Introduction*
 
-Make no mistake; [Docker](http://www.docker.io/) is the new hotness on Hacker News (well, behind
-BTC and NSA snooping revelations). Frequently, I'll encounter comments along the lines of
-"Disclaimer: I've never tried using Docker, but have you tried it?"
+Make no mistake; [Docker](http://www.docker.io/) is the new hotness on Hacker News. Frequently,
+I'll encounter comments along the lines of "Disclaimer: I've never tried using Docker, but have you
+tried it yet?"
 
 Some of my close friends in the industry have shared similar thoughts - in a world where best
 practices around configuration management, deployment, and virtualization are well-established, why
@@ -25,13 +26,13 @@ is Docker interesting?
   <p>It just hit me: Docker is the new curl | sh</p>&mdash; Brett Hoerner (@bretthoerner) <a href="https://twitter.com/bretthoerner/statuses/395237114331148288">October 29, 2013</a>
 </blockquote>
 
-[Trolling aside](https://twitter.com/mikeclarke/status/401129536844468224), Docker offers
-incredible power *when used properly*. Like any other tool, Docker offers a solution to a specific
-class of challenges; in particular, Docker exposes a Git-like interface to building and executing
-lightweight LXC containers. One direct application of Linux containers is powering Heroku-style
-PaaS runtime environments - it's a natural extension of the Docker project's history.
+Like any other tool, Docker offers a solution to a specific class of challenges; in particular,
+Docker exposes a Git-like interface to building and executing lightweight
+[LXC containers](http://linuxcontainers.org). One direct application of Linux containers is
+powering Heroku-style PaaS runtime environments - it's a natural extension of the Docker project's
+history.
 
-But let's be clear - most of us aren't building Heroku knockoffs (nor is it clear that deploying
+Most of us aren't building Heroku knockoffs (nor is it clear that deploying
 your production application via a `git push prod master` ad-hoc strategy is a good idea). Since
 most companies are not Heroku or Google, where else can Docker provide value in cutting edge web
 architectures? Right now, there aren't many resources online showing "real-life" applied Docker use
@@ -49,7 +50,7 @@ The continuous integration flow I've selected works like this:
 
 * Build a Docker container and mount the repo inside (via `ADD` in a Dockerfile)
 * Execute tests inside the container, starting & linking external resources as needed
-* Release build artificats - this can mean one of two paths.
+* Release build artifacts - this can mean one of two paths.
   * For shared libraries, push to private PyPI index, commit a git tag, etc.
   * For web applications, tag the container and push to private Docker repository
 * Clean up temporary containers, remove docker images
@@ -66,7 +67,7 @@ should work with this approach. Each repository that I'll be testing will includ
 `Dockerfile`, which will install shared libraries, 3rd-party dependencies, and otherwise perform
 system setup required for test runs to pass.
 
-For tests that require an external resource (database, redis, cassandra, etc.), the build tool will
+For tests that require an external resource (database, redis, cassandra, etc), the build tool will
 start a separate Docker container and link it to the test execution container. Linking is a recent
 feature added to Docker in the 0.6.5 release on October 31. Some advantages of launching external
 services as containers include shared-nothing service isolation and simplicity starting / destroying
