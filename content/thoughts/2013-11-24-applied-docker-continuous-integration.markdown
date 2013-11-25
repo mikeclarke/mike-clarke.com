@@ -35,7 +35,7 @@ Docker exposes a Git-like interface to building and executing lightweight
 powering Heroku-style PaaS runtime environments - it's a natural extension of the Docker project's
 history.
 
-Most of us aren't building Heroku knockoffs (nor is it clear that deploying
+However, most of us aren't building Heroku knockoffs (nor is it clear that deploying
 your production application via a `git push prod master` ad-hoc strategy is a good idea). Since
 most companies are not Heroku or Google, where else can Docker provide value in cutting edge web
 architectures? Right now, there aren't many resources online showing "real-life" applied Docker use
@@ -91,7 +91,7 @@ container that each application inherits (via the `FROM` Dockerfile directive).
 <script src="https://gist.github.com/mikeclarke/7620172.js"></script>
 
 The application-specific Dockerfile is largely uncached, since every RUN step after the ADD will
-need to execute for each commit.
+need to execute for each test run.
 
 [Application-specific Dockerfile](https://gist.github.com/mikeclarke/7620210)
 <script src="https://gist.github.com/mikeclarke/7620210.js"></script>
@@ -146,7 +146,7 @@ services, environment variables *must* be used to configure your application. Th
 [config](http://12factor.net/config) and [backing services](http://12factor.net/backing-services)
 recommendations. If you chose to run the tested container in production, you'll be far along the
 path towards meeting the requirements of [dev/prod parity](http://12factor.net/dev-prod-parity).
-Even if you opt not use docker in production, the interface docker enforces will be an asset
+Even if you opt not to use docker in production, the interface docker enforces will be an asset
 regardless of deployment technique.
 
 Recommendations:
@@ -159,5 +159,5 @@ Recommendations:
 
 *Further reading*
 
-* [Continuous Delivery with Docker and Jenkins - part I](http://blog.howareyou.com/post/62157486858/continuous-delivery-with-docker-and-jenkins-part-i)
-* [Continuous Delivery with Docker and Jenkins - part II](http://blog.howareyou.com/post/65048170054/continuous-delivery-with-docker-and-jenkins-part-ii)
+* [How Are You Blog - Continuous Delivery with Docker and Jenkins - part I](http://blog.howareyou.com/post/62157486858/continuous-delivery-with-docker-and-jenkins-part-i)
+* [How Are You Blog - Continuous Delivery with Docker and Jenkins - part II](http://blog.howareyou.com/post/65048170054/continuous-delivery-with-docker-and-jenkins-part-ii)
