@@ -20,18 +20,18 @@ exposed ports via environment variables.
 To link containers, start a container with the `-name` argument and use the name when starting the
 second container like this:
 
-    docker run -name first -p 6379 -d <container hash>
+    docker run -name first -p 5432 -d <container hash>
     docker run -name second -link first:db <hash>
 
 When used correctly, the "second" container will have additional environment variables exposed that
 describe the IP address and port of the mapped container, e.g.:
 
     DB_NAME=first
-    DB_PORT_6379_TCP_PORT=6379
-    DB_PORT=tcp://172.17.0.33:6379
-    DB_PORT_6379_TCP=tcp://172.17.0.33:6379
-    DB_PORT_6379_TCP_ADDR=172.17.0.33
-    DB_PORT_6379_TCP_PROTO=tcp
+    DB_PORT_5432_TCP_PORT=5432
+    DB_PORT=tcp://172.17.0.33:5432
+    DB_PORT_5432_TCP=tcp://172.17.0.33:5432
+    DB_PORT_5432_TCP_ADDR=172.17.0.33
+    DB_PORT_5432_TCP_PROTO=tcp
 
 The string after the `:` value is used as the prefix for the set of environment variables added to
 the second container.
