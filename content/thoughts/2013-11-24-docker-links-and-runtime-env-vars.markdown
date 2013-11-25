@@ -4,6 +4,15 @@ created_at: 2013-11-24 11:03:00 -0800
 kind: article
 ---
 
+As part of my work at [Standard Treasury](http://standardtreasury.com) implementing our continuous
+integration infrastructure, I ran into a bunch of issues creating ephemeral service instances for
+test executions. Fortunately for me, the Docker project added links to enable services to expose
+connection information to each other.
+
+Effectively utilizing these variables in a way that doesn't tightly couple your application to
+these ephemeral environment variables is tricky, though. I'll talk about my strategy for adapting
+Docker environment variables to application-specific variables in this post.
+
 Linking is a recent feature added to Docker in the 0.6.5 release on October 31. Passing the `-link`
 argument to `docker run` commands will enable a new container to access an existing container's
 exposed ports via environment variables.
