@@ -26,7 +26,7 @@ second container like this:
 When used correctly, the "second" container will have additional environment variables exposed that
 describe the IP address and port of the mapped container, e.g.:
 
-    DB_NAME=/violet_wolf/db
+    DB_NAME=first
     DB_PORT_6379_TCP_PORT=6379
     DB_PORT=tcp://172.17.0.33:6379
     DB_PORT_6379_TCP=tcp://172.17.0.33:6379
@@ -47,7 +47,7 @@ container, not via the Dockerfile.
 
 To solve this, I've opted to use a wrapper script called `env.sh` in each repo to take variables
 exposed by linked containers and create new ones that the application expects, `exec`'ing the
-remaining arguemnts. The Dockerfile for each application sets the ENTRYPOINT as `env.sh`.
+remaining arguments. The Dockerfile for each application sets the ENTRYPOINT as `env.sh`.
 
     ENTRYPOINT ["/path/to/env.sh"]
 
