@@ -137,16 +137,8 @@ strategy discussed in this post capitalizes on the best of what Docker offers.
 
 The final *complete* testing script that you can add as a shell script to Jenkins is this:
 
-    #!/bin/bash
-    sudo docker build -t $JOB_NAME/$BUILD_NUMBER .
-    DB_NAME="/$JOB_NAME-$BUILD_NUMBER-db"
-    DB_CONTAINER=$(sudo docker run -d -name $DB_NAME <private repository URL>/database-schema)
-    sudo docker run -link $DB_NAME:db -t $JOB_NAME/$BUILD_NUMBER nosetests
-    sudo docker tag $JOB_NAME/$BUILD_NUMBER <private repository URL>/${JOB_NAME}-master
-    sudo docker push <private repository URL>/${JOB_NAME}-master >/dev/null
-    sudo docker kill ...
-    sudo docker rm ...
-    sudo docker rmi ...
+[Full Jenkins test script](https://gist.github.com/mikeclarke/7636835)
+<script src="https://gist.github.com/mikeclarke/7636835.js"></script>
 
 Another nice feature of this approach is that it enforces best practices from the
 [12 factor application manifesto](http://12factor.net/). For your tests to connect to the linked
