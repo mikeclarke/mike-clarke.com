@@ -20,7 +20,7 @@ exposed ports via environment variables.
 To link containers, start a container with the `-name` argument and use the name when starting the
 second container like this:
 
-    docker run -name first -p 5432 -d <container hash>
+    docker run -name first -p 6379 -d <container hash>
     docker run -name second -link first:db <hash>
 
 When used correctly, the "second" container will have additional environment variables exposed that
