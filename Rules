@@ -20,6 +20,10 @@ compile '/thoughts/*' do
   layout 'post'
 end
 
+compile '/feed/*' do
+  filter :erb
+end
+
 compile '/static/*' do
 end
 
@@ -37,6 +41,10 @@ route '/thoughts/*' do
       .match(item.identifier).captures
 
   "/#{y}/#{m}/#{slug}/index.html"
+end
+
+route 'feed/blog' do
+  '/feed/blog.xml'
 end
 
 route '/static/*' do
